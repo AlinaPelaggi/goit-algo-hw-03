@@ -3,6 +3,7 @@ from datetime import datetime
 def get_days_from_today(date):
     current_date = datetime.today()                                                                #Поточна дата без урахування часу
     days = datetime.toordinal(date) - datetime.toordinal(current_date)                             #Рахуємо кількість днів між датами
+    
     return f'між Вашою датою {date_user.strftime("%d.%m.%Y")} та {current_date.strftime("%d.%m.%Y")} кількість днів становить {days}.'
     #функція поверне повідомлення для користувача
 
