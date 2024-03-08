@@ -15,8 +15,8 @@ def get_numbers_ticket(min, max, quantity):
         #Функція повертає список випадково вибраних, відсортованих чисел.       
         random_numbers = random.sample(list, quantity)
         random_numbers.sort()                                
-        return f'Цей код викликає функцію get_numbers_ticket з параметрами min={min}, max={max} та quantity={quantity}. В результаті ви отримаєте список з {quantity} випадковими, унікальними та відсортованими числами {random_numbers}'
-
+        return random_numbers
+    
 #Введення параметрів функції
 min = int(input("Введіть мінімальне можливе число у наборі (не менше 1):"))
 max = int(input("Введіть максимальне можливе число у наборі (не більше 1000):"))
