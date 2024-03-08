@@ -14,7 +14,7 @@ while True:
         date_user =  datetime.strptime(date_user, "%Y.%m.%d")
         break   
     except Exception:
-        print("\nERROR  Уважно ще раз введіть дату ЧЕРЕЗ КРАПКУ РІК.МІСЯЦЬ.ДЕНЬ (наприклад 2024.01.01)")
+        print(f"ERROR  Уважно ще раз введіть дату ЧЕРЕЗ КРАПКУ РІК.МІСЯЦЬ.ДЕНЬ (наприклад 2024.01.01)")
 
 print(get_days_from_today(date_user))
 
