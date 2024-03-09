@@ -1,19 +1,18 @@
 from datetime import datetime
-date_user = str
 
 def get_days_from_today(date: str) -> int:
-    current_date = datetime.today()               #Поточна дата без урахування часу
-#ЦИКЛ перевірки введеної дати користувачем (нескінченний цикл)
-    while True:
-        date = input("Введіть дату обчислення:    ")
-        try:
-            date = datetime.strptime(date, "%Y-%m-%d")
-            days = datetime.toordinal(date) - datetime.toordinal(current_date)         #Рахуємо кількість днів між датами
-            break   
-        except Exception:
-            print(f"ERROR  Уважно ще раз введіть дату")
+    global date_user
+    current_date = datetime.today().date()             #Поточна дата без урахування часу
     
-#Функція має повернути кількість днів між датами 
-    return days
+    try:
+        date_user = datetime.strptime(date_user, "%Y-%m-%d")
+        days_user = datetime.toordinal(date_user) - datetime.toordinal(current_date)         #Рахуємо кількість днів між датами
+        print(days_user)
+        return days_user       #Функція має повернути кількість днів між датами
+    except ValueError:
+        print(f"ERROR  Date enterder wrong")
+    except Exception: 
+        pass
 
-print(get_days_from_today(date_user))
+date_user = "2024-12-12"
+get_days_from_today(date_user)
